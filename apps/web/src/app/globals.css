@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@source "../**/*.{ts,tsx}";
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --free-red: #E2001A;
+  --free-red-hover: #c40017;
+  --bg: #ffffff;
+  --bg-secondary: #f4f4f5;
+  --border: #e4e4e7;
+  --text: #18181b;
+  --text-muted: #71717a;
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --bg-secondary: #141414;
+  --border: #1e1e1e;
+  --text: #fafafa;
+  --text-muted: #71717a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar — subtle, matches dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Focus visible — use Free red */
+:focus-visible {
+  outline: 2px solid var(--free-red);
+  outline-offset: 2px;
+}
